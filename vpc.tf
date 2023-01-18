@@ -80,6 +80,10 @@ resource "aws_eip" "wta_nat_ip" {
     lifecycle {
       create_before_destroy = true
     }
+
+    tags = {
+      "Name" = "WTA_EIP"
+    }
 }
 
 resource "aws_nat_gateway" "wta_nat_gateway" {
